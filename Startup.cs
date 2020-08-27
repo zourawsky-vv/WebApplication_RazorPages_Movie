@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using WebApplication_RazorPages_Movie.Data;
 
 namespace WebApplication_RazorPages_Movie
 {
@@ -24,6 +26,9 @@ namespace WebApplication_RazorPages_Movie
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddDbContext<WebApplication_RazorPages_MovieContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("WebApplication_RazorPages_MovieContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
