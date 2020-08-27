@@ -56,6 +56,8 @@ namespace WebApplication_RazorPages_Movie
             {
                 endpoints.MapRazorPages();
             });
+
+            //app.UseRequestLocalization("ru-RU");
         }
     }
 }
