@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using WebApplication_RazorPages_Movie.Data;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace WebApplication_RazorPages_Movie
 {
@@ -57,7 +59,15 @@ namespace WebApplication_RazorPages_Movie
                 endpoints.MapRazorPages();
             });
 
-            //app.UseRequestLocalization("ru-RU");
+            //var defaultCulture = new CultureInfo("en-US");
+            //var localizationOptions = new RequestLocalizationOptions
+            //{
+            //    DefaultRequestCulture = new RequestCulture(defaultCulture),
+            //    SupportedCultures = new List<CultureInfo> { defaultCulture },
+            //    SupportedUICultures = new List<CultureInfo> { defaultCulture }
+            //};
+            //app.UseRequestLocalization(localizationOptions);
+            //app.UseRequestLocalization("en-US");
         }
     }
 }
