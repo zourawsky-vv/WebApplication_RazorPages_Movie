@@ -20,9 +20,12 @@ namespace WebApplication_RazorPages_Movie.Models
 
         [Display(Name = "Жанр")]
         public string Genre { get; set; }
-        [Column(TypeName = "decimal(18, 2)")]
 
         [Display(Name = "Стоимость")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Price { get; set; }
+
+        [Display(Name = "Рейтинг")]
+        public string Raiting { get; set; }
     }
 }
