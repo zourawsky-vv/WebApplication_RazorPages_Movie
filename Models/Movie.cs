@@ -11,21 +11,21 @@ namespace WebApplication_RazorPages_Movie.Models
     {
         public int ID { get; set; }
 
-        [Display(Name = "Название")]
+        [Required, Display(Name = "Название"), StringLength(60, MinimumLength = 3)]
         public string Title { get; set; }
 
-        [Display(Name = "Дата выпуска")]
-        [DataType(DataType.Date)]
+        [Display(Name = "Дата выпуска"), DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 
-        [Display(Name = "Жанр")]
+        [Required, StringLength(30), RegularExpression(@"^[A-Z]+[a-zA-Z]*$"), Display(Name = "Жанр")]
         public string Genre { get; set; }
 
-        [Display(Name = "Стоимость")]
-        [Column(TypeName = "decimal(18, 2)")]
+        [Display(Name = "Стоимость"), Column(TypeName = "decimal(18, 0)"), DataType(DataType.Currency)]
+        [Range(1, 100)]
         public decimal Price { get; set; }
 
-        [Display(Name = "Рейтинг")]
+        [Required, RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
+        [Display(Name = "Рейтинг"), StringLength(5)]
         public string Raiting { get; set; }
     }
 }

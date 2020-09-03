@@ -1,6 +1,12 @@
 ﻿@page
 @model WebApplication_RazorPages_Movie.Pages.Movies.IndexModel
 
+
+@* Начало учебника по созданию приложения
+https://docs.microsoft.com/ru-ru/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1&tabs=visual-studio
+*@
+
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -16,7 +22,7 @@
             <option value="">All</option>
         </select>
         Title: <input type="text" asp-for="SearchString" />
-               <input type="submit" value="Filter" />
+        <input type="submit" value="Filter" />
     </p>
 </form>
 <table class="table">
